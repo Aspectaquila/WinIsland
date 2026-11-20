@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WinIsland</title>
+<link rel="stylesheet" href="island.css">
+</head>
+<body>
+<div id="notch"><div id="clip">
+  <div class="view v-compact on" id="vCompact"><div class="l" id="cL"></div><div class="m" id="cM"></div><div class="r" id="cR"></div></div>
+  <div class="view v-hud" id="vHud"><span id="hIcon"></span><span class="sp"></span><div class="bar"><i id="hBar"></i></div><span class="pct" id="hPct"></span></div>
+  <div class="view v-drop" id="vDrop"><div class="pic" id="dPic"></div><div class="meta"><div class="k" id="dK"></div><div class="t1" id="dT1"></div><div class="t2" id="dT2"></div></div><div id="dTrail"></div></div>
+  <div class="view v-exp" id="vExp">
+    <div class="topbar">
+      <div class="tabs"><button class="tab on" data-tab="home" id="tabHome"></button><button class="tab" data-tab="lyrics" id="tabLyrics"></button><button class="tab" data-tab="timer" id="tabTimer"></button></div>
+      <div class="srcs" id="xSrcs"></div>
+      <span class="sp"></span>
+      <span class="dots" id="xDots"></span>
+      <button class="ic" id="bGear" title="WinIsland Settings"></button>
+    </div>
+    <div class="page on" id="pgHome"></div>
+    <div class="page" id="pgLyrics"></div>
+    <div class="page" id="pgTimer"></div>
+  </div>
+</div></div>
+<script src="demo.js"></script>
+<script src="common.js"></script>
+<script src="island.js"></script>
+</body>
+</html>

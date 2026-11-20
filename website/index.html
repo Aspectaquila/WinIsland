@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WinIsland: the Dynamic Island for Windows</title>
+<meta name="description" content="WinIsland puts a Dynamic Island at the top of your Windows desktop: music with karaoke lyrics, timers, volume, weather and alerts, in a macOS or iOS look. Free, tiny and event-driven.">
+<meta name="theme-color" content="#07080f">
+<link rel="icon" href="assets/icon-64.png">
+<link rel="stylesheet" href="site.css">
+</head>
+<body class="look-macos">
+
+<header class="nav" id="nav">
+  <a class="logo" href="#top"><img src="assets/icon-64.png" alt=""><span>WinIsland</span></a>
+  <nav class="links">
+    <a href="#looks">Looks</a>
+    <a href="#features">Features</a>
+    <a href="#lyrics">Lyrics</a>
+    <a href="#settings">Settings</a>
+    <a href="#install">Install</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <a class="btn btn-sm btn-primary" href="downloads/WinIslandSetup.exe" download>Download</a>
+</header>
+
+<main id="top">
+  <!-- =============================================================== HERO -->
+  <section class="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="wrap hero-copy reveal">
+      <p class="pill-label"><span class="dot"></span>Version 2.0 · now with an iOS look</p>
+      <h1>The <span class="grad">Dynamic Island</span>,<br>made for Windows.</h1>
+      <p class="sub">Music with karaoke lyrics, timers, volume, weather and alerts, living in a little black island at the top of your screen. Pick the MacBook-style notch or the floating iPhone capsule.</p>
+      <div class="ctas">
+        <a class="btn btn-lg btn-primary" href="downloads/WinIslandSetup.exe" download>
+          <svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5 10.5 4.4v7.1H3zM11.5 4.3 21 3v8.5h-9.5zM3 12.5h7.5v7.1L3 18.5zM11.5 12.5H21V21l-9.5-1.3z"/></svg>
+          Download for Windows
+        </a>
+        <a class="btn btn-lg btn-ghost" href="#looks">See both looks
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="arrow"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+      </div>
+      <p class="meta">Free · 49 MB · Windows 11, 64-bit · no account, no admin rights</p>
+    </div>
+
+    <div class="wrap reveal" style="--d:.15s">
+      <div class="laptop">
+        <div class="lid">
+          <div class="screen" data-island-host>
+            <div class="wall" aria-hidden="true"><i class="a1"></i><i class="a2"></i><i class="a3"></i><svg class="ridge" viewBox="0 0 1200 200" preserveAspectRatio="none"><path d="M0 200V128l90-40 70 30 110-70 90 52 80-34 120 62 90-46 110 58 80-30 120 44 90-30 150 54v72z"/></svg></div>
+            <iframe class="island-frame" data-src="app/island.html?demo=tour&amp;transparent&amp;style=macos" title="WinIsland live demo" tabindex="-1" loading="lazy"></iframe>
+            <div class="taskbar" aria-hidden="true"><span class="win"></span><span></span><span></span><span></span><span></span><span class="clock">9:41</span></div>
+          </div>
+        </div>
+        <div class="base"><span></span></div>
+      </div>
+      <p class="caption"><span class="live"></span>Live: the real WinIsland interface, running right here in your browser.</p>
+    </div>
+  </section>
+
+  <!-- =============================================================== FACTS -->
+  <section class="facts wrap reveal">
+    <div><b>≈ 0%</b><span>CPU while idle. Every update is event-driven</span></div>
+    <div><b>~210 MB</b><span>private memory, host + WebView2</span></div>
+    <div><b>2 looks</b><span>macOS notch or iOS capsule, switch anytime</span></div>
+    <div><b>0 accounts</b><span>no sign-in, no tracking, per-user install</span></div>
+  </section>
+
+  <!-- =============================================================== LOOKS -->
+  <section class="looks" id="looks">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow">Two looks</p>
+        <h2>One island. Two personalities.</h2>
+        <p class="lede">Switch between them here, or anytime from the top of the Settings window. The island morphs in place.</p>
+        <div class="seg look-toggle" role="tablist" aria-label="Choose a look">
+          <span class="thumb" aria-hidden="true"></span>
+          <button role="tab" data-look="macos" aria-selected="true"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="11" rx="2"/><path d="M2 19h20"/></svg>macOS</button>
+          <button role="tab" data-look="ios" aria-selected="false"><svg viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="3"/></svg>iOS</button>
+        </div>
+      </div>
+
+      <div class="stage reveal" data-island-host>
+        <div class="wall" aria-hidden="true"><i class="a1"></i><i class="a2"></i><i class="a3"></i></div>
+        <iframe class="island-frame" data-src="app/island.html?demo=exp&amp;transparent&amp;style=macos" data-follow-look title="WinIsland dashboard, live" tabindex="-1" loading="lazy"></iframe>
+        <span class="stage-tag"><span class="live"></span><em class="look-name">macOS look</em></span>
+      </div>
+
+      <div class="look-cards">
+        <article class="look-card reveal" data-look-card="macos">
+          <div class="mini mac"><span class="notch"></span></div>
+          <h3>macOS</h3>
+          <p>Flush with the top edge of your screen, with soft concave shoulders, just like the MacBook notch. An album-tinted glow appears beneath it while music plays.</p>
+          <ul><li>Notch attached to the top edge</li><li>Bars for CPU and memory</li><li>Album-tinted glow while music plays</li></ul>
+        </article>
+        <article class="look-card reveal" style="--d:.08s" data-look-card="ios">
+          <div class="mini ios"><span class="capsule"></span></div>
+          <h3>iOS</h3>
+          <p>A capsule floating just below the edge, like the Dynamic Island on iPhone. Rounder shapes, a sky-coloured weather widget, activity rings and iOS-style tabs and sliders inside the dashboard.</p>
+          <ul><li>Crisp floating capsule, no shadow</li><li>Activity rings for CPU and memory</li><li>iOS segmented tabs and sliders</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================================== FEATURES -->
+  <section class="features" id="features">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow">Features</p>
+        <h2>Everything you glance at, in one place.</h2>
+        <p class="lede">Small when nothing is happening. Alive when something is.</p>
+      </div>
+      <div class="bento">
+        <article class="tile t-wide reveal">
+          <div class="tile-txt"><span class="ico" style="--c:#ff375f"><svg viewBox="0 0 24 24"><path d="M9 18V6l11-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg></span>
+            <h3>Now playing, beautifully</h3>
+            <p>Album art, a seek bar you can click, playback controls and a visualizer that moves with your real sound output. In the macOS look, a soft glow under the island takes on the colours of the cover while music plays.</p></div>
+          <div class="tile-img"><img data-look-src="crop-{look}-exp.png" src="assets/crop-macos-exp.png" alt="Expanded WinIsland dashboard with album art, playback controls, weather and system stats" loading="lazy"></div>
+        </article>
+        <article class="tile reveal" style="--d:.05s">
+          <span class="ico" style="--c:#5e5ce6"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="8" height="10" rx="4"/><rect x="13" y="7" width="8" height="10" rx="4"/></svg></span>
+          <h3>Spotify and YouTube, side by side</h3>
+          <p>With several players open, chips at the top of the dashboard let you pick which one you're controlling.</p>
+          <div class="chips" aria-hidden="true"><span class="chip on"><i></i><b>Spotify</b>Northern Lights</span><span class="chip"><i class="off"></i><b>Chrome</b>Snowfall at Night</span></div>
+        </article>
+        <article class="tile reveal" style="--d:.1s">
+          <span class="ico" style="--c:#0a84ff"><svg viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .5-8 6 6 0 0 0-11.5 1.5A3.3 3.3 0 0 0 7 18z"/></svg></span>
+          <h3>Weather &amp; activity rings</h3>
+          <p>Current conditions from Open-Meteo, plus CPU and memory, sampled only while the dashboard is open.</p>
+          <div class="rings-demo" aria-hidden="true"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="27" class="bg r1"/><circle cx="32" cy="32" r="27" class="fg r1"/><circle cx="32" cy="32" r="18" class="bg r2"/><circle cx="32" cy="32" r="18" class="fg r2"/></svg><div><b>−4°</b><span>Snow · Oslo</span></div></div>
+        </article>
+        <article class="tile reveal" style="--d:.1s">
+          <span class="ico" style="--c:#30d158"><svg viewBox="0 0 24 24"><rect x="3" y="6.5" width="13" height="11" rx="2.5"/><path d="m16 10.5 5-3v9l-5-3z"/></svg></span>
+          <h3>Camera &amp; mic indicators</h3>
+          <p>A green dot while an app uses your camera, orange for the microphone, checked against apps that are actually running.</p>
+          <div class="privacy-demo" aria-hidden="true"><span class="pp"><b>9:41</b><i class="g"></i><i class="o"></i></span></div>
+        </article>
+        <article class="tile reveal">
+          <span class="ico" style="--c:#ff453a"><svg viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></svg></span>
+          <h3>Volume HUD</h3>
+          <p>The island widens with a volume bar whenever the volume changes. Scroll on it to adjust.</p>
+          <div class="tile-shot"><img data-look-src="crop-{look}-hud.png" src="assets/crop-macos-hud.png" alt="Volume indicator in the island" loading="lazy"></div>
+        </article>
+        <article class="tile reveal" style="--d:.05s">
+          <span class="ico" style="--c:#ff9f0a"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="7.5"/><path d="M12 9.5V13l2.5 1.5M9.5 3h5"/></svg></span>
+          <h3>Timers as live activities</h3>
+          <p>Start a timer from the dashboard and it keeps counting in the island, with a chime when it's done.</p>
+          <div class="tile-shot"><img data-look-src="crop-{look}-timer.png" src="assets/crop-macos-timer.png" alt="Timer page of the dashboard" loading="lazy"></div>
+        </article>
+        <article class="tile reveal" style="--d:.1s">
+          <span class="ico" style="--c:#bf5af2"><svg viewBox="0 0 24 24"><rect x="4" y="3.5" width="16" height="9" rx="4.5"/><path d="M12 15.5v5M9 18l3 2.5 3-2.5"/></svg></span>
+          <h3>Song-change pop-up</h3>
+          <p>When the track changes, the island drops down with the cover, title and artist. You can switch it off.</p>
+          <div class="tile-shot"><img data-look-src="crop-{look}-drop.png" src="assets/crop-macos-drop.png" alt="Track pop-up dropping out of the island" loading="lazy"></div>
+        </article>
+        <article class="tile t-wide t-dark reveal">
+          <div class="tile-txt"><span class="ico" style="--c:#40c8e0"><svg viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/></svg></span>
+            <h3>Feather-light by design</h3>
+            <p>No polling loops. Media, volume, camera and display changes arrive as Windows events, so the island sleeps until something happens. It hides itself during fullscreen games and videos, and when your screen is locked.</p></div>
+          <div class="meters">
+            <div><span>Idle CPU</span><b>≈ 0%</b><i style="--w:2%"></i></div>
+            <div><span>Private memory, all processes</span><b>~210 MB</b><i style="--w:30%"></i></div>
+            <div><span>Music playing, with visualizer</span><b>&lt; 1%</b><i style="--w:6%"></i></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================================== LYRICS -->
+  <section class="lyrics" id="lyrics">
+    <div class="wrap split">
+      <div class="reveal">
+        <p class="eyebrow">Karaoke lyrics</p>
+        <h2>Sing along, line by line.</h2>
+        <p class="lede">Time-synced lyrics fill in as they're sung, right in the dashboard. Click any line to jump there. Turn on <em>Sing along</em> and the island itself shows the current line while music plays.</p>
+        <ul class="ticks">
+          <li>Works with Spotify, YouTube and any app with Windows media controls</li>
+          <li>Lyrics from <b>LRCLIB</b>, a free and open-source database</li>
+          <li>Only the song's title, artist, album and length are sent, once per song, and the answer is kept on your PC</li>
+        </ul>
+      </div>
+      <div class="stage lyr-stage reveal" style="--d:.1s" data-island-host>
+        <div class="wall" aria-hidden="true"><i class="a1"></i><i class="a2"></i><i class="a3"></i></div>
+        <iframe class="island-frame" data-src="app/island.html?demo=lyrics&amp;transparent&amp;style=macos" data-follow-look title="Karaoke lyrics, live" tabindex="-1" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================================== SETTINGS -->
+  <section class="settings" id="settings">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow">Settings</p>
+        <h2>One settings window. Two islands.</h2>
+        <p class="lede">The macOS / iOS switch lives in the toolbar. Flip it and the island morphs between notch and capsule, right there in the live preview, while the window stays familiar.</p>
+        <div class="seg look-toggle" role="tablist" aria-label="Choose a look">
+          <span class="thumb" aria-hidden="true"></span>
+          <button role="tab" data-look="macos" aria-selected="true"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="11" rx="2"/><path d="M2 19h20"/></svg>macOS</button>
+          <button role="tab" data-look="ios" aria-selected="false"><svg viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="3"/></svg>iOS</button>
+        </div>
+      </div>
+      <div class="window reveal">
+        <div class="titlebar"><img src="assets/icon-32.png" alt=""><span>WinIsland — Settings</span><i></i><i></i><i class="x"></i></div>
+        <div class="shots">
+          <img data-look-src="panel-{look}-overview.png" src="assets/panel-macos-overview.png" alt="WinIsland settings window, overview page" loading="lazy">
+        </div>
+      </div>
+      <div class="thumbs reveal">
+        <figure class="thumbcard"><img data-look-src="panel-{look}-island.png" src="assets/panel-macos-island.png" alt="Island settings page" loading="lazy"><figcaption>Island behaviour &amp; alerts</figcaption></figure>
+        <figure class="thumbcard"><img data-look-src="panel-{look}-music.png" src="assets/panel-macos-music.png" alt="Music and lyrics settings page" loading="lazy"><figcaption>Music &amp; karaoke</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================================== INSTALL -->
+  <section class="install" id="install">
+    <div class="wrap split">
+      <div class="reveal">
+        <p class="eyebrow">Install</p>
+        <h2>Up and running in seconds.</h2>
+        <p class="lede">A proper setup wizard: pick your look, choose where it goes, set a few preferences and you're done. It installs just for you, so no administrator rights are needed, and it removes itself cleanly from Windows Settings → Apps.</p>
+        <dl class="reqs">
+          <div><dt>Version</dt><dd>2.0.0</dd></div>
+          <div><dt>Download</dt><dd>49 MB, everything included</dd></div>
+          <div><dt>System</dt><dd>Windows 11, 64-bit</dd></div>
+          <div><dt>Needs</dt><dd>Microsoft Edge WebView2 Runtime (built into Windows 11)</dd></div>
+        </dl>
+        <a class="btn btn-lg btn-primary" href="downloads/WinIslandSetup.exe" download>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 19.5h14"/></svg>Download WinIslandSetup.exe</a>
+      </div>
+      <div class="wizard reveal" style="--d:.1s">
+        <div class="titlebar"><img src="assets/icon-32.png" alt=""><span>WinIsland Setup</span><i></i><i></i><i class="x"></i></div>
+        <div class="wz-shots" id="wz">
+          <img src="assets/setup-0.png" alt="Setup: welcome" class="on">
+          <img src="assets/setup-1.png" alt="Setup: choose your look" loading="lazy">
+          <img src="assets/setup-2.png" alt="Setup: install location" loading="lazy">
+          <img src="assets/setup-3.png" alt="Setup: preferences" loading="lazy">
+          <img src="assets/setup-4.png" alt="Setup: installing" loading="lazy">
+          <img src="assets/setup-5.png" alt="Setup: finished" loading="lazy">
+        </div>
+        <div class="wz-dots" id="wzDots" role="tablist" aria-label="Setup steps"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================================== FAQ -->
+  <section class="faq" id="faq">
+    <div class="wrap narrow">
+      <div class="head reveal"><p class="eyebrow">FAQ</p><h2>Questions, answered.</h2></div>
+      <div class="qa reveal">
+        <details><summary>Is WinIsland free?</summary><p>Yes. There's no account, no subscription and nothing to unlock.</p></details>
+        <details><summary>Which music apps work?</summary><p>Anything that shows up in the Windows media controls: Spotify, YouTube and other sites in your browser, the Media Player app, VLC, TIDAL and more. If several are open, pick one from the chips at the top of the dashboard.</p></details>
+        <details><summary>Where do the lyrics come from?</summary><p>From LRCLIB, a free and open-source lyrics database. WinIsland sends only the song's title, artist, album and length, once per song, and keeps the answer on your PC. You can turn lyrics off in Settings → Music &amp; Lyrics.</p></details>
+        <details><summary>Will it slow down my PC?</summary><p>No. It reacts to Windows events instead of polling, so it uses about 0% CPU when nothing is happening and around 210 MB of private memory across its processes. It hides itself during fullscreen games and videos.</p></details>
+        <details><summary>Do I need administrator rights?</summary><p>No. Setup installs WinIsland just for your user account, in your own AppData folder, and registers it in Windows Settings → Apps so you can uninstall it like any other app.</p></details>
+        <details><summary>Can I switch between the macOS and iOS look later?</summary><p>Anytime. The switch sits at the top of the Settings window (Ctrl + Alt + F), and the island morphs in place.</p></details>
+        <details><summary>Does it work with multiple monitors?</summary><p>The island lives at the top of your main display, and it steps aside while a fullscreen app is running there.</p></details>
+        <details><summary>How do I uninstall it?</summary><p>Open Windows Settings → Apps → Installed apps, find WinIsland and choose Uninstall. Everything it added (files, shortcuts and the autostart entry) is removed. You can choose to keep your settings.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================================== CTA -->
+  <section class="cta">
+    <div class="wrap reveal">
+      <img class="cta-icon" src="assets/icon-256.png" alt="">
+      <h2>Give your desktop an island.</h2>
+      <p class="lede">Free for Windows 11. Installs in seconds, uninstalls cleanly.</p>
+      <a class="btn btn-lg btn-primary" href="downloads/WinIslandSetup.exe" download>
+        <svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5 10.5 4.4v7.1H3zM11.5 4.3 21 3v8.5h-9.5zM3 12.5h7.5v7.1L3 18.5zM11.5 12.5H21V21l-9.5-1.3z"/></svg>Download WinIsland</a>
+      <p class="meta">Version 2.0.0 · 49 MB</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <a class="logo" href="#top"><img src="assets/icon-32.png" alt=""><span>WinIsland</span></a>
+    <p>WinIsland is an independent project and isn't affiliated with Apple Inc. macOS, iOS and Dynamic Island are trademarks of Apple Inc. Windows is a trademark of Microsoft Corporation. Lyrics by LRCLIB, weather by Open-Meteo.</p>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>

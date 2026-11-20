@@ -1,0 +1,15 @@
+# build output
+bin/
+obj/
+dist/
+installer/Setup/payload.zip
+*.log
+.vs/
+
+# personal / machine-specific (never published)
+settings.json
+cache/
+backup/
+
+# promo video work in progress (final render added separately)
+video/

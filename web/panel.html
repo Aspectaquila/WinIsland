@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WinIsland Settings</title>
+<link rel="stylesheet" href="panel.css">
+</head>
+<body class="macos">
+<header class="topnav">
+  <div class="brand"><img src="icon.svg" alt=""><div><b>WinIsland</b><span>Settings</span></div></div>
+  <div class="vswitch" id="vswitch" role="tablist" aria-label="Look">
+    <span class="thumb"></span>
+    <button role="tab" data-style="macos"><i data-icon="laptop"></i>macOS</button>
+    <button role="tab" data-style="ios"><i data-icon="phone"></i>iOS</button>
+  </div>
+  <div class="state"><span class="dot"></span><span id="sideMem">Running</span></div>
+</header>
+
+<div class="app">
+  <aside class="side">
+    <nav class="navlist">
+      <button class="nav on" data-page="overview"><span class="ic" data-c="indigo"><i data-icon="sparkle"></i></span><b>Overview</b></button>
+      <button class="nav" data-page="island"><span class="ic" data-c="graphite"><i data-icon="island"></i></span><b>Island</b></button>
+      <button class="nav" data-page="music"><span class="ic" data-c="pink"><i data-icon="music"></i></span><b>Music &amp; Lyrics</b></button>
+      <button class="nav" data-page="weather"><span class="ic" data-c="blue"><i data-icon="cloud"></i></span><b>Weather</b></button>
+      <button class="nav" data-page="about"><span class="ic" data-c="grey"><i data-icon="info"></i></span><b>General</b></button>
+    </nav>
+    <div class="sp"></div>
+    <div class="hint"><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>F</kbd> opens these settings</div>
+  </aside>
+
+  <main class="main" id="main">
+    <!-- ================= OVERVIEW ================= -->
+    <section class="page on" id="p-overview">
+      <div class="hero">
+        <div class="stage" id="stage">
+          <div class="wall"></div>
+          <iframe id="preview" title="Live preview" tabindex="-1"></iframe>
+          <div class="stage-tag"><span class="live"></span>Live preview</div>
+        </div>
+        <div class="hero-txt">
+          <h2 class="eyebrow" id="heroEyebrow">macOS look</h2>
+          <h1 id="heroTitle">A notch that lives on your desktop.</h1>
+          <p id="heroLead">Flush with the top edge of your screen, with soft shoulders, like the MacBook notch. Music, lyrics, timers and alerts unfold right out of it.</p>
+        </div>
+      </div>
+      <div id="notices"></div>
+      <h3 class="sect">Quick settings</h3>
+      <div class="tiles">
+        <label class="tile" data-c="indigo"><input type="checkbox" data-key="island.enabled"><span class="ic"><i data-icon="island"></i></span><b>Island</b><span class="st"></span></label>
+        <label class="tile" data-c="pink"><input type="checkbox" data-key="island.trackPopup"><span class="ic"><i data-icon="music"></i></span><b>Music pop-up</b><span class="st"></span></label>
+        <label class="tile" data-c="purple"><input type="checkbox" data-key="island.lyricsNotch"><span class="ic"><i data-icon="mic"></i></span><b>Sing along</b><span class="st"></span></label>
+        <label class="tile" data-c="teal"><input type="checkbox" data-key="island.visualizer"><span class="ic"><i data-icon="wave"></i></span><b>Visualizer</b><span class="st"></span></label>
+        <label class="tile" data-c="orange"><input type="checkbox" data-key="island.hoverExpand"><span class="ic"><i data-icon="pointer"></i></span><b>Open on hover</b><span class="st"></span></label>
+        <label class="tile" data-c="blue"><input type="checkbox" data-key="island.glow"><span class="ic"><i data-icon="sparkle"></i></span><b>Album glow</b><span class="st"></span></label>
+      </div>
+      <h3 class="sect">Footprint</h3>
+      <div class="stats">
+        <div class="stat"><span>Memory</span><b id="stMem">–</b><em>all processes</em></div>
+        <div class="stat"><span>Idle CPU</span><b>≈ 0%</b><em>event-driven, no polling</em></div>
+        <div class="stat"><span>Processes</span><b id="stProcs">–</b><em>host + WebView2</em></div>
+      </div>
+    </section>
+
+    <!-- ================= ISLAND ================= -->
+    <section class="page" id="p-island">
+      <h1 class="title">Island</h1>
+      <p class="lead">Click the island (or hover, if you like) to open the dashboard. Scroll on it to change the volume.</p>
+      <h3 class="sect">Behaviour</h3>
+      <div class="card">
+        <div class="row"><span class="ic" data-c="indigo"><i data-icon="island"></i></span><div class="txt"><b>Show the island</b></div><label class="tg"><input type="checkbox" data-key="island.enabled"><i></i></label></div>
+        <div class="row" data-req="island.enabled"><span class="ic" data-c="orange"><i data-icon="pointer"></i></span><div class="txt"><b>Open on hover</b><span>Expand the dashboard when the pointer rests on the island, instead of on click.</span></div><label class="tg"><input type="checkbox" data-key="island.hoverExpand"><i></i></label></div>
+        <div class="row" data-req="island.enabled"><span class="ic" data-c="teal"><i data-icon="clock"></i></span><div class="txt"><b>Close after the pointer leaves</b><span>The dashboard closes when the mouse moves off it, even if you opened it with a click.</span></div><div class="sl"><input type="range" min="0" max="10" data-key="island.collapseDelay"><output data-unit=" s"></output></div></div>
+        <div class="row" data-req="island.enabled"><span class="ic" data-c="green"><i data-icon="fullscreen"></i></span><div class="txt"><b>Hide during fullscreen apps</b><span>Games and videos keep the top of the screen to themselves.</span></div><label class="tg"><input type="checkbox" data-key="island.hideInFullscreen"><i></i></label></div>
+      </div>
+      <h3 class="sect">Appearance</h3>
+      <div class="card">
+        <div class="row" data-req="island.enabled"><span class="ic" data-c="graphite"><i data-icon="clock"></i></span><div class="txt"><b>Time &amp; weather when idle</b><span>Off gives you a pure, empty island until something happens.</span></div><label class="tg"><input type="checkbox" data-key="island.idleInfo"><i></i></label></div>
+        <div class="row" data-req="island.enabled"><span class="ic" data-c="blue"><i data-icon="sparkle"></i></span><div class="txt"><b>Album glow</b><span>While music plays, a soft glow under the notch tinted with the album art's colours (macOS look; the iOS capsule stays crisp).</span></div><label class="tg"><input type="checkbox" data-key="island.glow"><i></i></label></div>
+        <div class="row" data-req="island.enabled"><span class="ic" data-c="grey"><i data-icon="clock"></i></span><div class="txt"><b>Show the time</b></div><label class="tg"><input type="checkbox" data-key="island.time"><i></i></label></div>
+      </div>
+      <h3 class="sect">Live activities &amp; alerts</h3>
+      <div class="card">
+        <div class="row" data-req="island.enabled"><span class="ic" data-c="red"><i data-icon="vol"></i></span><div class="txt"><b>Volume changes</b><span>The island widens with a volume bar whenever the system volume changes.</span></div><label class="tg"><input type="checkbox" data-key="island.volume"><i></i></label></div>
+        <div class="row" data-req="island.enabled"><span class="ic" data-c="green"><i data-icon="camera"></i></span><div class="txt"><b>Camera &amp; mic indicators</b><span>Green and orange dots while an app is using your camera or microphone.</span></div><label class="tg"><input type="checkbox" data-key="island.privacy"><i></i></label></div>
+        <div class="row" data-req="island.enabled"><span class="ic" data-c="red"><i data-icon="bell"></i></span><div class="txt"><b>Notifications</b><span id="notifStatus">Windows toast notifications, when Windows allows access.</span></div><label class="tg"><input type="checkbox" data-key="island.notifications"><i></i></label></div>
+        <div class="row" data-req="island.enabled"><span class="ic" data-c="purple"><i data-icon="cpu"></i></span><div class="txt"><b>System stats</b><span>CPU and memory in the dashboard, sampled only while it is open.</span></div><label class="tg"><input type="checkbox" data-key="island.system"><i></i></label></div>
+        <div class="row" data-req="island.enabled"><span class="ic" data-c="green"><i data-icon="tree"></i></span><div class="txt"><b>Greetings &amp; events</b><span>A greeting at start-up and camera/mic alerts.</span></div><label class="tg"><input type="checkbox" data-key="island.events"><i></i></label></div>
+      </div>
+    </section>
+
+    <!-- ================= MUSIC ================= -->
+    <section class="page" id="p-music">
+      <h1 class="title">Music &amp; Lyrics</h1>
+      <p class="lead">Works with Spotify, YouTube and any app that shows media controls in Windows. With several players open, pick which one to control from the chips at the top of the dashboard.</p>
+      <h3 class="sect">Now playing</h3>
+      <div class="card">
+        <div class="row" data-req="island.enabled"><span class="ic" data-c="pink"><i data-icon="music"></i></span><div class="txt"><b>Now playing</b><span>Album art, seek bar and playback controls.</span></div><label class="tg"><input type="checkbox" data-key="island.media"><i></i></label></div>
+        <div class="row" data-req="island.media"><span class="ic" data-c="orange"><i data-icon="drop"></i></span><div class="txt"><b>Music pop-up</b><span>Drop down with the album art, title and artist whenever the song changes.</span></div><label class="tg"><input type="checkbox" data-key="island.trackPopup"><i></i></label></div>
+        <div class="row" data-req="island.media"><span class="ic" data-c="teal"><i data-icon="wave"></i></span><div class="txt"><b>Audio visualizer</b><span>Bars that move with your real sound output, sampled only while music plays.</span></div><label class="tg"><input type="checkbox" data-key="island.visualizer"><i></i></label></div>
+      </div>
+      <h3 class="sect">Karaoke</h3>
+      <div class="card">
+        <div class="row" data-req="island.media"><span class="ic" data-c="purple"><i data-icon="mic"></i></span><div class="txt"><b>Karaoke lyrics</b><span>A Lyrics tab with time-synced lines that fill in as they're sung. Click a line to jump there.</span></div><label class="tg"><input type="checkbox" data-key="island.lyrics"><i></i></label></div>
+        <div class="row" data-req="island.lyrics"><span class="ic" data-c="indigo"><i data-icon="island"></i></span><div class="txt"><b>Sing along in the island</b><span>While music plays, the island widens and shows the current line.</span></div><label class="tg"><input type="checkbox" data-key="island.lyricsNotch"><i></i></label></div>
+      </div>
+      <p class="foot">Lyrics come from LRCLIB, a free and open-source lyrics database. Only the song's title, artist, album and length are sent, once per song, and the answer is kept on your PC.</p>
+    </section>
+
+    <!-- ================= WEATHER ================= -->
+    <section class="page" id="p-weather">
+      <h1 class="title">Weather</h1>
+      <p class="lead">Shown in the idle island and the dashboard. Data from Open-Meteo (free, no account), refreshed every 30 minutes.</p>
+      <h3 class="sect">Location</h3>
+      <div class="card">
+        <div class="row wrap"><span class="ic" data-c="red"><i data-icon="pin"></i></span><div class="txt"><b>City</b><span id="cityNow">Not set</span></div>
+          <div class="inline"><input class="txtin" id="cityIn" placeholder="e.g. Oslo" spellcheck="false"><button class="btnx primary" id="bCity">Save</button><button class="btnx" id="bLocate">Use my location</button></div></div>
+        <div class="row"><span class="ic" data-c="orange"><i data-icon="thermo"></i></span><div class="txt"><b>Units</b></div><div class="seg" data-key="weather.units"><span class="segthumb"></span><button data-v="c">°C</button><button data-v="f">°F</button></div></div>
+        <div class="row" data-req="island.enabled"><span class="ic" data-c="blue"><i data-icon="cloud"></i></span><div class="txt"><b>Show weather</b></div><label class="tg"><input type="checkbox" data-key="island.weather"><i></i></label></div>
+      </div>
+    </section>
+
+    <!-- ================= GENERAL ================= -->
+    <section class="page" id="p-about">
+      <h1 class="title">General</h1>
+      <p class="lead">WinIsland changes nothing on your system except one autostart entry, which you can switch off here.</p>
+      <h3 class="sect">Startup</h3>
+      <div class="card">
+        <div class="row"><span class="ic" data-c="green"><i data-icon="power"></i></span><div class="txt"><b>Start with Windows</b></div><label class="tg"><input type="checkbox" data-key="general.autostart"><i></i></label></div>
+        <div class="row"><span class="ic" data-c="grey"><i data-icon="key"></i></span><div class="txt"><b>Ctrl + Alt + F opens these settings</b></div><label class="tg"><input type="checkbox" data-key="general.hotkey"><i></i></label></div>
+      </div>
+      <h3 class="sect">Maintenance</h3>
+      <div class="card">
+        <div class="row"><span class="ic" data-c="blue"><i data-icon="restore"></i></span><div class="txt"><b>Reset settings</b><span>Return every option to its default.</span></div><button class="btnx" id="bReset">Reset</button></div>
+        <div class="row"><span class="ic" data-c="graphite"><i data-icon="exit"></i></span><div class="txt"><b>Quit WinIsland</b><span>Close the island until the next sign-in, or until you start it again.</span></div><button class="btnx" id="bQuit">Quit</button></div>
+        <div class="row"><span class="ic" data-c="red"><i data-icon="exit"></i></span><div class="txt"><b>Remove from startup &amp; quit</b><span>Turns off autostart and closes WinIsland. Uninstall it from Windows Settings → Apps.</span></div><button class="btnx danger" id="bUninstall">Remove</button></div>
+      </div>
+      <h3 class="sect">Files</h3>
+      <div class="card"><div class="kv" id="files"></div></div>
+    </section>
+  </main>
+</div>
+
+<div class="dlg" id="dlg"><div class="box"><h3 id="dlgT"></h3><p id="dlgP"></p><div class="acts"><button class="btnx" id="dlgNo">Cancel</button><button class="btnx danger" id="dlgYes">Confirm</button></div></div></div>
+<div class="toast" id="toast"></div>
+
+<script src="demo.js"></script>
+<script src="common.js"></script>
+<script src="panel.js"></script>
+</body>
+</html>

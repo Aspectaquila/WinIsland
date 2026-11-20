@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WinIsland Setup</title>
+<link rel="stylesheet" href="setup.css">
+</head>
+<body>
+<div class="win">
+  <aside class="rail">
+    <div class="aurora"><i></i><i></i><i></i></div>
+    <div class="railin">
+      <img class="appicon" src="icon.svg" alt="">
+      <h1>WinIsland</h1>
+      <p class="ver" id="ver">Version 2.0</p>
+      <ol class="steps" id="steps"></ol>
+      <div class="sp"></div>
+      <p class="fine" id="fine">Per-user install · no administrator rights needed</p>
+    </div>
+  </aside>
+
+  <main class="pane">
+    <!-- WELCOME -->
+    <section class="page" data-step="welcome">
+      <div class="demo-island"><div class="pill" id="welcomePill"><span class="a"></span><span class="t">Northern Lights</span><span class="v"><i></i><i></i><i></i><i></i></span></div></div>
+      <h2>Welcome to WinIsland</h2>
+      <p class="lead">A Dynamic Island for Windows. Music, karaoke lyrics, timers, volume and alerts live in a little black island at the top of your screen.</p>
+      <ul class="feats">
+        <li><span class="fi" style="--c:#ff375f"><svg viewBox="0 0 24 24"><path d="M9 18V6l11-2v12" /><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg></span><div><b>Music &amp; karaoke lyrics</b><span>Spotify, YouTube and any player, with time-synced lyrics.</span></div></li>
+        <li><span class="fi" style="--c:#5e5ce6"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="11" height="8" rx="2"/><rect x="15" y="9" width="6" height="11" rx="2"/></svg></span><div><b>Two looks: macOS and iOS</b><span>A notch on the top edge, or a floating capsule.</span></div></li>
+        <li><span class="fi" style="--c:#30d158"><svg viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/></svg></span><div><b>Feather-light</b><span>Event-driven: about 0% CPU when nothing is happening.</span></div></li>
+      </ul>
+      <div class="note" id="upgradeNote" hidden></div>
+    </section>
+
+    <!-- LOOK -->
+    <section class="page" data-step="look">
+      <h2>Choose your look</h2>
+      <p class="lead">You can switch between them any time from the top of the Settings window.</p>
+      <div class="looks">
+        <button class="look on" data-style="macos">
+          <div class="scene mac"><div class="bar"></div><div class="notch"><span></span></div></div>
+          <div class="lk"><b>macOS</b><span>A notch flush with the top edge of your screen, like a MacBook.</span></div>
+          <span class="check"><svg viewBox="0 0 24 24"><path d="m6 12.5 4 4 8-9"/></svg></span>
+        </button>
+        <button class="look" data-style="ios">
+          <div class="scene ios"><div class="capsule"><span></span></div></div>
+          <div class="lk"><b>iOS</b><span>A floating capsule just below the edge, like the iPhone Dynamic Island.</span></div>
+          <span class="check"><svg viewBox="0 0 24 24"><path d="m6 12.5 4 4 8-9"/></svg></span>
+        </button>
+      </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section class="page" data-step="location">
+      <h2>Install location</h2>
+      <p class="lead">WinIsland installs just for you, so it doesn't need administrator rights.</p>
+      <div class="field">
+        <label for="dir">Folder</label>
+        <div class="dirrow"><span class="folder"><svg viewBox="0 0 24 24"><path d="M3.5 7.5a2 2 0 0 1 2-2h4l2 2h7a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg></span>
+          <input id="dir" spellcheck="false"><button class="btn" id="browse">Browse…</button></div>
+        <p class="err" id="dirErr"></p>
+      </div>
+      <div class="space">
+        <div><span>Space required</span><b id="need">–</b></div>
+        <div><span>Space available</span><b id="free">–</b></div>
+      </div>
+      <div class="meter"><i id="meter"></i></div>
+    </section>
+
+    <!-- OPTIONS -->
+    <section class="page" data-step="options">
+      <h2>A few preferences</h2>
+      <p class="lead">Everything here can be changed later in Settings.</p>
+      <div class="opts">
+        <label class="opt"><span class="fi" style="--c:#30d158"><svg viewBox="0 0 24 24"><path d="M12 3.5v8"/><path d="M7 6.5a7.5 7.5 0 1 0 10 0"/></svg></span><div><b>Start with Windows</b><span>The island is there whenever you sign in.</span></div><span class="tg"><input type="checkbox" id="oAutostart" checked><i></i></span></label>
+        <label class="opt"><span class="fi" style="--c:#0a84ff"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg></span><div><b>Start menu shortcut</b><span>Find “WinIsland” in Start to open its settings.</span></div><span class="tg"><input type="checkbox" id="oStart" checked><i></i></span></label>
+        <label class="opt"><span class="fi" style="--c:#ff9f0a"><svg viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8 20h8M12 16.5V20"/></svg></span><div><b>Desktop shortcut</b><span>An icon on your desktop.</span></div><span class="tg"><input type="checkbox" id="oDesktop"><i></i></span></label>
+        <label class="opt"><span class="fi" style="--c:#bf5af2"><svg viewBox="0 0 24 24"><rect x="9" y="3.5" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v2.5"/></svg></span><div><b>Karaoke lyrics</b><span>Time-synced lyrics from LRCLIB (sends only title, artist, album and length).</span></div><span class="tg"><input type="checkbox" id="oLyrics" checked><i></i></span></label>
+      </div>
+    </section>
+
+    <!-- INSTALLING -->
+    <section class="page" data-step="install">
+      <h2 id="progTitle">Installing WinIsland</h2>
+      <p class="lead" id="progLead">This takes a few seconds.</p>
+      <div class="progress">
+        <div class="pbar"><i id="pfill"></i><span class="shine"></span></div>
+        <div class="pmeta"><b id="ppct">0%</b><code id="pfile">Preparing…</code></div>
+      </div>
+    </section>
+
+    <!-- DONE -->
+    <section class="page" data-step="done">
+      <div class="okmark"><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="m15 27 7.5 7.5L38 19"/></svg></div>
+      <h2 id="doneTitle">WinIsland is ready</h2>
+      <p class="lead" id="doneLead">Look at the top of your screen. Click the island to open it, and press Ctrl + Alt + F for settings.</p>
+      <label class="opt solo" id="launchRow"><span class="fi" style="--c:#5e5ce6"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z"/></svg></span><div><b>Launch WinIsland now</b><span>Opens the island and its settings.</span></div><span class="tg"><input type="checkbox" id="oLaunch" checked><i></i></span></label>
+    </section>
+
+    <!-- UNINSTALL -->
+    <section class="page" data-step="confirm">
+      <h2>Uninstall WinIsland?</h2>
+      <p class="lead">The island, its shortcuts, its autostart entry and its Apps &amp; features entry will be removed.</p>
+      <label class="opt solo"><span class="fi" style="--c:#0a84ff"><svg viewBox="0 0 24 24"><path d="M6 4h9l3 3v13H6z"/><path d="M9 4v5h6V4"/></svg></span><div><b>Keep my settings</b><span>Handy if you plan to reinstall later.</span></div><span class="tg"><input type="checkbox" id="oKeep"><i></i></span></label>
+    </section>
+
+    <footer class="foot">
+      <button class="btn ghost" id="bCancel">Cancel</button>
+      <span class="sp"></span>
+      <button class="btn" id="bBack">Back</button>
+      <button class="btn primary" id="bNext">Continue</button>
+    </footer>
+  </main>
+</div>
+<script src="setup.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <!-- WinIsland profile picture: full-bleed (platforms crop to a circle), everything important inside the central circle -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1f3378"/><stop offset=".5" stop-color="#2c1d66"/><stop offset="1" stop-color="#0a0c20"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".5" cy=".66" r=".55">
+      <stop offset="0" stop-color="#8fd3ff" stop-opacity=".75"/><stop offset=".45" stop-color="#7c6bff" stop-opacity=".32"/><stop offset="1" stop-color="#7c6bff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx=".5" cy=".5" r=".72">
+      <stop offset=".6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".45"/>
+    </radialGradient>
+    <linearGradient id="aur" x1="0" x2="1">
+      <stop offset="0" stop-color="#3ee6c1"/><stop offset=".5" stop-color="#8fd3ff"/><stop offset="1" stop-color="#c08bff"/>
+    </linearGradient>
+    <linearGradient id="chip" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3ee6c1"/><stop offset=".55" stop-color="#8fd3ff"/><stop offset="1" stop-color="#9b7bff"/>
+    </linearGradient>
+    <filter id="blur" x="-20%" y="-60%" width="140%" height="220%"><feGaussianBlur stdDeviation="34"/></filter>
+    <filter id="soft" x="-20%" y="-60%" width="140%" height="220%"><feGaussianBlur stdDeviation="10"/></filter>
+    <filter id="shadow" x="-30%" y="-80%" width="160%" height="300%"><feDropShadow dx="0" dy="26" stdDeviation="30" flood-color="#000" flood-opacity=".55"/></filter>
+  </defs>
+
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+  <rect width="1024" height="1024" fill="url(#glow)"/>
+
+  <!-- aurora ribbons -->
+  <path d="M-60 742 C 200 560, 520 900, 1084 610" stroke="url(#aur)" stroke-width="110" fill="none" filter="url(#blur)" opacity=".9"/>
+  <path d="M-60 742 C 200 560, 520 900, 1084 610" stroke="url(#aur)" stroke-width="16" fill="none" filter="url(#soft)" opacity=".9"/>
+  <path d="M-60 742 C 200 560, 520 900, 1084 610" stroke="#e9fbff" stroke-width="3.5" fill="none" opacity=".75"/>
+  <path d="M-60 860 C 260 720, 560 960, 1084 760" stroke="url(#aur)" stroke-width="60" fill="none" filter="url(#blur)" opacity=".5"/>
+
+  <!-- stars -->
+  <g fill="#fff">
+    <circle cx="250" cy="560" r="5" opacity=".9"/><circle cx="790" cy="470" r="4" opacity=".85"/><circle cx="690" cy="585" r="3" opacity=".7"/>
+    <circle cx="350" cy="440" r="3" opacity=".7"/><circle cx="560" cy="250" r="2.5" opacity=".55"/><circle cx="210" cy="330" r="2.5" opacity=".5"/>
+    <circle cx="830" cy="300" r="3" opacity=".55"/><circle cx="455" cy="610" r="2.5" opacity=".6"/>
+  </g>
+
+  <rect width="1024" height="1024" fill="url(#vignette)"/>
+
+  <!-- the island -->
+  <g filter="url(#shadow)">
+    <rect x="232" y="356" width="560" height="176" rx="88" fill="#000"/>
+  </g>
+  <rect x="233" y="357" width="558" height="174" rx="87" fill="none" stroke="#fff" stroke-opacity=".07" stroke-width="2"/>
+  <!-- album chip -->
+  <rect x="270" y="394" width="100" height="100" rx="26" fill="url(#chip)"/>
+  <path d="M270 470 l30 -26 l22 16 l26 -30 l22 22 v42 h-100z" fill="#0b1030" opacity=".55"/>
+  <!-- visualizer -->
+  <g fill="url(#aur)">
+    <rect x="610" y="420" width="16" height="48" rx="8"/>
+    <rect x="638" y="398" width="16" height="92" rx="8"/>
+    <rect x="666" y="412" width="16" height="64" rx="8"/>
+    <rect x="694" y="392" width="16" height="104" rx="8"/>
+    <rect x="722" y="426" width="16" height="36" rx="8"/>
+  </g>
+</svg>

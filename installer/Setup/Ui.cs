@@ -83,7 +83,7 @@ namespace FrostSetup
                 wv.WebMessageReceived += (s, a) => OnMessage(a.TryGetWebMessageAsString());
                 var auto = Environment.GetEnvironmentVariable("FROST_SETUP_AUTOTEST");
                 if (!string.IsNullOrEmpty(auto) && !_uninstall)
-                    wv.NavigationCompleted += async (s, a) => await wv.ExecuteScriptAsync($"autotest({_js.Serialize(auto)}, 'ios')");
+                    wv.NavigationCompleted += async (s, a) => await wv.ExecuteScriptAsync($"autotest({_js.Serialize(auto)}, 'island')");
                 wv.Navigate("https://setup.frost/setup.html" + (_uninstall ? "?mode=uninstall" : ""));
             }
             catch (Exception ex) { Engine.Log("ui " + ex); MessageBox.Show(ex.Message, Text); Close(); }
@@ -128,7 +128,7 @@ namespace FrostSetup
                 case "checkDir": Post(new { type = "dir", dir = S("dir"), freeMB = FreeMB(S("dir")), dirError = Engine.CheckDir(S("dir")), quiet = true }); break;
                 case "install":
                 {
-                    var o = new InstallOptions { Dir = S("dir"), Style = S("style") == "ios" ? "ios" : "macos", Autostart = B("autostart"), Desktop = B("desktop"),
+                    var o = new InstallOptions { Dir = S("dir"), Style = Program.NormStyle(S("style")), Autostart = B("autostart"), Desktop = B("desktop"),
                                                  StartMenu = B("startMenu"), Lyrics = B("lyrics"), Launch = B("launch") };
                     RunJob(() => Engine.Install(o, Progress), () => { _installedDir = Path.GetFullPath(o.Dir); });
                     break;

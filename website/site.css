@@ -97,8 +97,12 @@ p { text-wrap: pretty; }
     #0b0c12; }
 .wall::after { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgba(255, 255, 255, .035) 1px, transparent 1px); background-size: 22px 22px;
   -webkit-mask-image: linear-gradient(180deg, #000, transparent 70%); mask-image: linear-gradient(180deg, #000, transparent 70%); }
-.island-frame { position: absolute; left: 50%; top: 0; width: 760px; height: 340px; border: 0; background: transparent; pointer-events: none; color-scheme: light;
+.island-shots { position: absolute; left: 50%; top: 0; width: 760px; height: 340px; pointer-events: none;
   transform: translateX(-50%) scale(var(--s, 1)); transform-origin: 50% 0; }
+.island-shots img { position: absolute; left: 50%; max-width: none; height: auto; transform: translateX(-50%) scale(.97); transform-origin: 50% 0;
+  opacity: 0; filter: blur(4px); transition: opacity .4s var(--ease-out), transform .45s var(--ease-out), filter .4s var(--ease-out); }
+.island-shots img.on { opacity: 1; transform: translateX(-50%); filter: none; }
+@media (prefers-reduced-motion: reduce) { .island-shots img { transition: none; transform: translateX(-50%); filter: none; } }
 .taskbar { position: absolute; left: 0; right: 0; bottom: 0; height: 6.5%; display: flex; align-items: center; justify-content: center; gap: 1.1%;
   background: rgba(14, 15, 22, .7); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06); }
 .taskbar span { width: 2.4%; aspect-ratio: 1; border-radius: 24%; background: rgba(255, 255, 255, .1); }
@@ -119,7 +123,7 @@ p { text-wrap: pretty; }
 .seg button:active { transform: scale(.97); transition: transform .12s var(--ease-out), color .2s var(--ease-out); }
 .seg-ind { position: absolute; top: 3px; bottom: 3px; left: 3px; width: calc(50% - 3px); border-radius: 7px; background: #26262c;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .1), inset 0 1px 0 rgba(255, 255, 255, .06), 0 1px 3px rgba(0, 0, 0, .5); transition: transform .3s var(--ease-drawer); }
-.look-ios .seg-ind { transform: translateX(100%); }
+.look-island .seg-ind { transform: translateX(100%); }
 
 /* ------------------------------------------------------------ facts */
 .facts { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 96px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -146,9 +150,9 @@ p { text-wrap: pretty; }
 .look-card li::before { content: ''; position: absolute; left: 2px; top: 6px; width: 10px; height: 6px; border-left: 1.5px solid var(--aur1); border-bottom: 1.5px solid var(--aur1); transform: rotate(-45deg); }
 .look-card-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .tag-on { font-size: 12px; font-weight: 500; color: var(--aur1); opacity: 0; transform: translateX(-4px); transition: opacity .2s var(--ease-out), transform .2s var(--ease-out); }
-.look-macos [data-look-card="macos"], .look-ios [data-look-card="ios"] { box-shadow: inset 0 0 0 1px var(--line-3); }
-.look-macos [data-look-card="macos"] .tag-on, .look-ios [data-look-card="ios"] .tag-on { opacity: 1; transform: none; }
-.look-macos [data-look-card="ios"], .look-ios [data-look-card="macos"] { opacity: .62; }
+.look-notch [data-look-card="notch"], .look-island [data-look-card="island"] { box-shadow: inset 0 0 0 1px var(--line-3); }
+.look-notch [data-look-card="notch"] .tag-on, .look-island [data-look-card="island"] .tag-on { opacity: 1; transform: none; }
+.look-notch [data-look-card="island"], .look-island [data-look-card="notch"] { opacity: .62; }
 .mini { position: relative; height: 84px; margin-bottom: 20px; border-radius: 10px; overflow: hidden; box-shadow: inset 0 0 0 1px var(--line);
   background: radial-gradient(60% 90% at 15% 130%, rgba(62, 230, 193, .35), transparent 70%), radial-gradient(60% 90% at 88% 130%, rgba(192, 139, 255, .38), transparent 70%), #0d0e14; }
 .mini-notch { position: absolute; left: 50%; top: 0; width: 112px; height: 22px; transform: translateX(-50%); background: #000; border-radius: 0 0 10px 10px; }
@@ -174,8 +178,8 @@ p { text-wrap: pretty; }
 .c-wide .cell-txt { align-self: end; padding-bottom: 4px; }
 .c-wide .vis-exp { margin: -28px -28px 0 0; border-top: 0; padding: 0 28px 28px; align-items: flex-start; background: none; }
 .c-wide .vis-exp img { max-width: 600px; }
-/* in the macOS look the crops are notches: let them hang from the cell's top edge, like the real thing */
-.look-macos .vis-notch { align-items: flex-start; padding-top: 0; }
+/* with the Dynamic Notch the crops are notches: let them hang from the cell's top edge, like the real thing */
+.look-notch .vis-notch { align-items: flex-start; padding-top: 0; }
 img.swap { opacity: 0; }
 
 .chips { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }

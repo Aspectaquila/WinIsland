@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en" class="look-macos">
+<html lang="en" class="look-notch">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>WinIsland: the Dynamic Island for Windows</title>
-<meta name="description" content="WinIsland puts a Dynamic Island at the top of your Windows desktop: music with karaoke lyrics, timers, volume, weather and alerts, in a macOS or iOS look. Free, tiny and event-driven.">
+<meta name="description" content="WinIsland puts a Dynamic Island at the top of your Windows desktop: music with karaoke lyrics, timers, volume, weather and alerts, as a Dynamic Notch or a Dynamic Island. Free, native and feather-light.">
 <meta name="theme-color" content="#09090b">
 <meta name="color-scheme" content="dark">
 <link rel="icon" href="assets/icon-64.png">
@@ -33,7 +33,7 @@
   <!-- ============================================================ HERO -->
   <section class="hero" id="top" aria-labelledby="hero-title">
     <div class="wrap hero-copy">
-      <a class="badge enter" style="--i:0" href="#looks"><span class="badge-dot" aria-hidden="true"></span>Free for Windows 11<span class="badge-sep" aria-hidden="true"></span><span class="badge-more">macOS &amp; iOS looks<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 4l4 4-4 4"/></svg></span></a>
+      <a class="badge enter" style="--i:0" href="#looks"><span class="badge-dot" aria-hidden="true"></span>Free for Windows 11<span class="badge-sep" aria-hidden="true"></span><span class="badge-more">Dynamic Notch &amp; Dynamic Island<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 4l4 4-4 4"/></svg></span></a>
       <h1 id="hero-title" class="enter" style="--i:1">The Dynamic Island,<br><span class="h-muted">made for Windows.</span></h1>
       <p class="sub enter" style="--i:2">Music with karaoke lyrics, timers, volume, weather and alerts, living in a small black island at the top of your screen.</p>
       <div class="ctas enter" style="--i:3">
@@ -46,7 +46,7 @@
           View on GitHub
         </a>
       </div>
-      <p class="meta enter" style="--i:4">Free · 49 MB · Windows 11, 64-bit · No account, no admin rights</p>
+      <p class="meta enter" style="--i:4">Free · 6.2 MB · Windows 11, 64-bit · No account, no admin rights</p>
     </div>
 
     <div class="wrap hero-stage enter" style="--i:5">
@@ -54,16 +54,16 @@
       <div class="device">
         <div class="screen" data-island-host="screen">
           <div class="wall" aria-hidden="true"></div>
-          <iframe class="island-frame" data-src="app/island.html?demo=tour&amp;transparent&amp;style=macos" title="WinIsland live demo: the island cycling through music, lyrics, volume and the dashboard" tabindex="-1" loading="lazy"></iframe>
+          <div class="island-shots" data-tour role="img" aria-label="WinIsland cycling through its states: idle, music, the track pop-up, the expanded view and the volume HUD"></div>
           <div class="taskbar" aria-hidden="true"><span class="tb-win"></span><span></span><span></span><span></span><span></span><span class="tb-clock">9:41</span></div>
         </div>
       </div>
       <div class="stage-bar">
-        <p class="live-cap"><span class="live" aria-hidden="true"></span>Live: the real WinIsland interface, running in your browser.</p>
+        <p class="live-cap"><span class="live" aria-hidden="true"></span>Real captures of the app, at actual size.</p>
         <div class="seg" role="radiogroup" aria-label="Island look">
           <span class="seg-ind" aria-hidden="true"></span>
-          <button type="button" role="radio" aria-checked="true" data-look="macos"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="2"/><path d="M2 19h20"/></svg>macOS</button>
-          <button type="button" role="radio" aria-checked="false" data-look="ios" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="3"/></svg>iOS</button>
+          <button type="button" role="radio" aria-checked="true" data-look="notch"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="2"/><path d="M2 19h20"/></svg>Dynamic Notch</button>
+          <button type="button" role="radio" aria-checked="false" data-look="island" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="3"/></svg>Dynamic Island</button>
         </div>
       </div>
     </div>
@@ -72,8 +72,8 @@
   <!-- ============================================================ FACTS -->
   <section class="wrap facts reveal" aria-label="At a glance">
     <div><b>≈ 0%</b><span>CPU while idle. Every update is event-driven</span></div>
-    <div><b>~210 MB</b><span>Private memory, host + WebView2 processes</span></div>
-    <div><b>49 MB</b><span>One download, everything included</span></div>
+    <div><b>~82 MB</b><span>Memory while idle, one native process</span></div>
+    <div><b>6.2 MB</b><span>One download, nothing else to install</span></div>
     <div><b>0 accounts</b><span>No sign-in, no tracking, per-user install</span></div>
   </section>
 
@@ -83,34 +83,34 @@
       <div class="sec-head row reveal">
         <div>
           <p class="eyebrow">Two looks</p>
-          <h2 id="looks-title">One island. Two personalities.</h2>
-          <p class="lede">Switch here, or anytime from the top of the Settings window. The island morphs in place; everything else stays the same.</p>
+          <h2 id="looks-title">A notch or an island. Your call.</h2>
+          <p class="lede">Switch here, or anytime from the top of the Settings window. The Dynamic Notch opens into a dashboard; the Dynamic Island works like the one on iPhone, with its own interface.</p>
         </div>
         <div class="seg" role="radiogroup" aria-label="Island look">
           <span class="seg-ind" aria-hidden="true"></span>
-          <button type="button" role="radio" aria-checked="true" data-look="macos"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="2"/><path d="M2 19h20"/></svg>macOS</button>
-          <button type="button" role="radio" aria-checked="false" data-look="ios" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="3"/></svg>iOS</button>
+          <button type="button" role="radio" aria-checked="true" data-look="notch"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="2"/><path d="M2 19h20"/></svg>Dynamic Notch</button>
+          <button type="button" role="radio" aria-checked="false" data-look="island" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="3"/></svg>Dynamic Island</button>
         </div>
       </div>
 
       <div class="stage reveal" data-island-host="stage">
         <div class="wall" aria-hidden="true"></div>
-        <iframe class="island-frame" data-src="app/island.html?demo=exp&amp;transparent&amp;style=macos" title="WinIsland dashboard, live" tabindex="-1" loading="lazy"></iframe>
-        <span class="stage-tag"><span class="live" aria-hidden="true"></span><span class="look-name" aria-live="polite">macOS look</span></span>
+        <div class="island-shots" data-shot="exp" role="img" aria-label="The expanded view with album art, playback controls and more"></div>
+        <span class="stage-tag"><span class="live" aria-hidden="true"></span><span class="look-name" aria-live="polite">Dynamic Notch</span></span>
       </div>
 
       <div class="compare">
-        <article class="look-card reveal" data-look-card="macos">
+        <article class="look-card reveal" data-look-card="notch">
           <div class="mini" aria-hidden="true"><span class="mini-notch"></span></div>
-          <div class="look-card-head"><h3>macOS</h3><span class="tag-on">Selected</span></div>
-          <p>Flush with the top edge of your screen, with soft concave shoulders, just like the MacBook notch. An album-tinted glow appears beneath it while music plays.</p>
-          <ul><li>Notch attached to the top edge</li><li>Bars for CPU and memory</li><li>Album-tinted glow while music plays</li></ul>
+          <div class="look-card-head"><h3>Dynamic Notch</h3><span class="tag-on">Selected</span></div>
+          <p>Flush with the top edge of your screen, with soft concave shoulders. Click or hover and it opens into a dashboard with Home, Lyrics and Timer tabs. An album-tinted glow appears beneath it while music plays.</p>
+          <ul><li>Attached to the top edge</li><li>Tabbed dashboard: Home, Lyrics, Timer</li><li>Album-tinted glow while music plays</li></ul>
         </article>
-        <article class="look-card reveal" style="--d:60ms" data-look-card="ios">
+        <article class="look-card reveal" style="--d:60ms" data-look-card="island">
           <div class="mini" aria-hidden="true"><span class="mini-capsule"></span></div>
-          <div class="look-card-head"><h3>iOS</h3><span class="tag-on">Selected</span></div>
-          <p>A capsule floating just below the edge, like the Dynamic Island on iPhone. Rounder shapes, a sky-coloured weather widget, activity rings and iOS-style tabs and sliders.</p>
-          <ul><li>Crisp floating capsule, no shadow</li><li>Activity rings for CPU and memory</li><li>iOS segmented tabs and sliders</li></ul>
+          <div class="look-card-head"><h3>Dynamic Island</h3><span class="tag-on">Selected</span></div>
+          <p>A capsule floating just below the edge, with its own interface built like the iPhone's. Content sits on both sides of the capsule, a second bubble splits off when two things are going on, and a click opens a Live Activity card.</p>
+          <ul><li>Two activities at once, in a split bubble</li><li>Live Activity cards for music and timers</li><li>Sky weather and Activity rings for CPU and memory</li></ul>
         </article>
       </div>
     </div>
@@ -130,15 +130,15 @@
           <div class="cell-txt">
             <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 18V6l11-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg></span>
             <h3>Now playing, beautifully</h3>
-            <p>Album art, a seek bar you can click, playback controls and a visualizer that moves with your real sound output. In the macOS look, a soft glow under the island takes on the colours of the cover.</p>
+            <p>Album art, a seek bar you can click, playback controls and a visualizer that moves with your real sound output. With the Dynamic Notch, a soft glow under it takes on the colours of the cover.</p>
           </div>
-          <div class="cell-vis vis-exp"><img data-macos="assets/crop-macos-exp.png" data-ios="assets/crop-ios-exp.png" src="assets/crop-macos-exp.png" width="696" height="289" alt="Expanded WinIsland dashboard with album art, playback controls, weather and system stats" loading="lazy" decoding="async"></div>
+          <div class="cell-vis vis-exp"><img data-notch="assets/shots/notch-exp.png" data-island="assets/shots/island-exp.png" src="assets/shots/notch-exp.png" alt="Expanded WinIsland dashboard with album art, playback controls, weather and system stats" loading="lazy" decoding="async"></div>
         </article>
 
         <article class="cell reveal" style="--d:60ms">
           <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="8" height="10" rx="4"/><rect x="13" y="7" width="8" height="10" rx="4"/></svg></span>
           <h3>Spotify and YouTube, side by side</h3>
-          <p>With several players open, chips at the top of the dashboard let you pick which one you're controlling.</p>
+          <p>With several players open, pick which one you're controlling: chips in the Dynamic Notch, a menu in the Dynamic Island.</p>
           <div class="cell-vis vis-center" aria-hidden="true">
             <div class="chips"><span class="chip on"><i></i><b>Spotify</b>Northern Lights</span><span class="chip"><i class="off"></i><b>Chrome</b>Snowfall at Night</span></div>
           </div>
@@ -147,7 +147,7 @@
         <article class="cell reveal">
           <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .5-8 6 6 0 0 0-11.5 1.5A3.3 3.3 0 0 0 7 18z"/></svg></span>
           <h3>Weather &amp; activity rings</h3>
-          <p>Current conditions from Open-Meteo, plus CPU and memory, sampled only while the dashboard is open.</p>
+          <p>Current conditions from Open-Meteo, plus CPU and memory, sampled only while they're on screen.</p>
           <div class="cell-vis vis-center" aria-hidden="true">
             <div class="rings"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="27" class="bg r1"/><circle cx="32" cy="32" r="27" class="fg r1"/><circle cx="32" cy="32" r="18" class="bg r2"/><circle cx="32" cy="32" r="18" class="fg r2"/></svg><div><b>−4°</b><span>Snow · Oslo</span></div></div>
           </div>
@@ -157,7 +157,7 @@
           <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></svg></span>
           <h3>Volume HUD</h3>
           <p>The island widens with a volume bar whenever the volume changes. Scroll on it to adjust.</p>
-          <div class="cell-vis vis-center vis-notch"><img data-macos="assets/crop-macos-hud.png" data-ios="assets/crop-ios-hud.png" src="assets/crop-macos-hud.png" width="435" height="60" alt="Volume indicator in the island" loading="lazy" decoding="async"></div>
+          <div class="cell-vis vis-center vis-notch"><img data-notch="assets/shots/notch-hud.png" data-island="assets/shots/island-hud.png" src="assets/shots/notch-hud.png" alt="Volume indicator in the island" loading="lazy" decoding="async"></div>
         </article>
 
         <article class="cell reveal" style="--d:120ms">
@@ -171,24 +171,24 @@
           <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="3.5" width="16" height="9" rx="4.5"/><path d="M12 15.5v5M9 18l3 2.5 3-2.5"/></svg></span>
           <h3>Song-change pop-up</h3>
           <p>When the track changes, the island drops down with the cover, title and artist. You can switch it off.</p>
-          <div class="cell-vis vis-center vis-notch"><img data-macos="assets/crop-macos-drop.png" data-ios="assets/crop-ios-drop.png" src="assets/crop-macos-drop.png" width="486" height="128" alt="Track pop-up dropping out of the island" loading="lazy" decoding="async"></div>
+          <div class="cell-vis vis-center vis-notch"><img data-notch="assets/shots/notch-drop.png" data-island="assets/shots/island-drop.png" src="assets/shots/notch-drop.png" alt="Track pop-up dropping out of the island" loading="lazy" decoding="async"></div>
         </article>
 
         <article class="cell reveal" style="--d:60ms">
           <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="7.5"/><path d="M12 9.5V13l2.5 1.5M9.5 3h5"/></svg></span>
           <h3>Timers as live activities</h3>
-          <p>Start a timer from the dashboard and it keeps counting in the island, with a chime when it's done.</p>
-          <div class="cell-vis vis-center vis-notch"><img data-macos="assets/crop-macos-timer.png" data-ios="assets/crop-ios-timer.png" src="assets/crop-macos-timer.png" width="696" height="262" alt="Timer page of the dashboard" loading="lazy" decoding="async"></div>
+          <p>Start a timer and it keeps counting in the island, with a chime when it's done. In the Dynamic Island it gets its own bubble next to your music.</p>
+          <div class="cell-vis vis-center vis-notch"><img data-notch="assets/shots/notch-timer.png" data-island="assets/shots/island-timer.png" src="assets/shots/notch-timer.png" alt="Timer in the island" loading="lazy" decoding="async"></div>
         </article>
 
         <article class="cell reveal" style="--d:120ms">
           <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/></svg></span>
           <h3>Feather-light by design</h3>
-          <p>No polling loops. Media, volume, camera and display changes arrive as Windows events. It hides during fullscreen games and videos, and when your screen is locked.</p>
+          <p>A native app built with Rust and GPUI, with no browser engine inside. Media, volume, camera and display changes arrive as Windows events, and nothing redraws while nothing moves. It hides during fullscreen games and videos, and when your screen is locked.</p>
           <div class="meters">
             <div><span>Idle CPU</span><b>≈ 0%</b><i style="--w:.02"></i></div>
-            <div><span>Private memory, all processes</span><b>~210 MB</b><i style="--w:.3"></i></div>
-            <div><span>Music with visualizer</span><b>&lt; 1%</b><i style="--w:.06"></i></div>
+            <div><span>Memory while idle</span><b>~82 MB</b><i style="--w:.12"></i></div>
+            <div><span>Music with visualizer, one core</span><b>~2%</b><i style="--w:.06"></i></div>
           </div>
         </article>
       </div>
@@ -201,7 +201,7 @@
       <div class="reveal">
         <p class="eyebrow">Karaoke lyrics</p>
         <h2 id="lyrics-title">Sing along, line by line.</h2>
-        <p class="lede">Time-synced lyrics fill in as they're sung, right in the dashboard. Click any line to jump there. Turn on <em>Sing along</em> and the island itself shows the current line while music plays.</p>
+        <p class="lede">Time-synced lyrics fill in as they're sung, right in the island. Click any line to jump there. Turn on <em>Sing along</em> and the island itself shows the current line while music plays.</p>
         <ul class="ticks">
           <li>Works with Spotify, YouTube and any app with Windows media controls</li>
           <li>Lyrics from <b>LRCLIB</b>, a free and open-source database</li>
@@ -210,8 +210,8 @@
       </div>
       <div class="stage stage-lyrics reveal" style="--d:80ms" data-island-host="stage">
         <div class="wall" aria-hidden="true"></div>
-        <iframe class="island-frame" data-src="app/island.html?demo=lyrics&amp;transparent&amp;style=macos" title="Karaoke lyrics, live" tabindex="-1" loading="lazy"></iframe>
-        <span class="stage-tag"><span class="live" aria-hidden="true"></span>Live lyrics</span>
+        <div class="island-shots" data-shot="lyrics" role="img" aria-label="Karaoke lyrics filling in as they're sung"></div>
+        <span class="stage-tag"><span class="live" aria-hidden="true"></span>Karaoke lyrics</span>
       </div>
     </div>
   </section>
@@ -223,22 +223,22 @@
         <div>
           <p class="eyebrow">Settings</p>
           <h2 id="settings-title">One settings window. Two islands.</h2>
-          <p class="lede">The macOS / iOS switch lives in the toolbar. Flip it and the island morphs between notch and capsule in the live preview, while the window stays familiar.</p>
+          <p class="lede">The Dynamic Notch / Dynamic Island switch lives in the toolbar. Flip it and the live preview morphs from one to the other, while the window stays the same.</p>
         </div>
         <div class="seg" role="radiogroup" aria-label="Island look">
           <span class="seg-ind" aria-hidden="true"></span>
-          <button type="button" role="radio" aria-checked="true" data-look="macos"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="2"/><path d="M2 19h20"/></svg>macOS</button>
-          <button type="button" role="radio" aria-checked="false" data-look="ios" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="3"/></svg>iOS</button>
+          <button type="button" role="radio" aria-checked="true" data-look="notch"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="2"/><path d="M2 19h20"/></svg>Dynamic Notch</button>
+          <button type="button" role="radio" aria-checked="false" data-look="island" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="3"/></svg>Dynamic Island</button>
         </div>
       </div>
 
       <figure class="window reveal">
         <div class="titlebar" aria-hidden="true"><img src="assets/icon-32.png" width="16" height="16" alt=""><span>WinIsland Settings</span><i></i><i></i><i class="x"></i></div>
-        <img class="shot" data-macos="assets/panel-macos-overview.png" data-ios="assets/panel-ios-overview.png" src="assets/panel-macos-overview.png" width="1160" height="760" alt="WinIsland settings window, overview page with the macOS / iOS switch and a live island preview" loading="lazy" decoding="async">
+        <img class="shot" data-notch="assets/shots/panel-notch-overview.png" data-island="assets/shots/panel-island-overview.png" src="assets/shots/panel-notch-overview.png" alt="WinIsland settings window, overview page with the Dynamic Notch / Dynamic Island switch and a live preview" loading="lazy" decoding="async">
       </figure>
       <div class="thumbs">
-        <figure class="thumb reveal"><div class="thumb-img"><img data-macos="assets/panel-macos-island.png" data-ios="assets/panel-ios-island.png" src="assets/panel-macos-island.png" width="1160" height="760" alt="Island settings page" loading="lazy" decoding="async"></div><figcaption><b>Island</b>Behaviour, alerts and what shows when idle</figcaption></figure>
-        <figure class="thumb reveal" style="--d:60ms"><div class="thumb-img"><img data-macos="assets/panel-macos-music.png" data-ios="assets/panel-ios-music.png" src="assets/panel-macos-music.png" width="1160" height="760" alt="Music and lyrics settings page" loading="lazy" decoding="async"></div><figcaption><b>Music &amp; Lyrics</b>Pop-up, visualizer, glow and karaoke</figcaption></figure>
+        <figure class="thumb reveal"><div class="thumb-img"><img data-notch="assets/shots/panel-notch-island.png" data-island="assets/shots/panel-island-island.png" src="assets/shots/panel-notch-island.png" alt="Island settings page" loading="lazy" decoding="async"></div><figcaption><b>Island</b>Behaviour, alerts and what shows when idle</figcaption></figure>
+        <figure class="thumb reveal" style="--d:60ms"><div class="thumb-img"><img data-notch="assets/shots/panel-notch-music.png" data-island="assets/shots/panel-island-music.png" src="assets/shots/panel-notch-music.png" alt="Music and lyrics settings page" loading="lazy" decoding="async"></div><figcaption><b>Music &amp; Lyrics</b>Pop-up, visualizer, glow and karaoke</figcaption></figure>
       </div>
     </div>
   </section>
@@ -251,9 +251,9 @@
         <h2 id="install-title">Up and running in seconds.</h2>
         <p class="lede">A proper setup wizard: pick your look, choose where it goes, set a few preferences and you're done. It installs just for you and removes itself cleanly from Windows Settings → Apps.</p>
         <dl class="reqs">
-          <div><dt>Download</dt><dd>49 MB, everything included</dd></div>
+          <div><dt>Download</dt><dd>6.2 MB, nothing else to install</dd></div>
           <div><dt>System</dt><dd>Windows 11, 64-bit</dd></div>
-          <div><dt>Needs</dt><dd>Microsoft Edge WebView2 Runtime (built into Windows 11)</dd></div>
+          <div><dt>Built with</dt><dd>Rust and GPUI: native, GPU-rendered</dd></div>
           <div><dt>Install</dt><dd>Per-user, no administrator rights</dd></div>
         </dl>
         <a class="btn btn-primary btn-lg" href="https://github.com/Aspectaquila/WinIsland/releases/latest/download/WinIslandSetup.exe">
@@ -265,7 +265,7 @@
           <div class="titlebar" aria-hidden="true"><img src="assets/icon-32.png" width="16" height="16" alt=""><span>WinIsland Setup</span><i></i><i></i><i class="x"></i></div>
           <div class="wz-shots" id="wzShots">
             <img id="wz-0" src="assets/setup-0.png" width="880" height="580" alt="Setup step 1: welcome" class="on" decoding="async">
-            <img id="wz-1" data-macos="assets/setup-1.png" data-ios="assets/setup-1-ios.png" src="assets/setup-1.png" width="880" height="580" alt="Setup step 2: choose your look" loading="lazy" decoding="async">
+            <img id="wz-1" data-notch="assets/setup-1.png" data-island="assets/setup-1-ios.png" src="assets/setup-1.png" width="880" height="580" alt="Setup step 2: choose your look" loading="lazy" decoding="async">
             <img id="wz-2" src="assets/setup-2.png" width="880" height="580" alt="Setup step 3: install location" loading="lazy" decoding="async">
             <img id="wz-3" src="assets/setup-3.png" width="880" height="580" alt="Setup step 4: preferences" loading="lazy" decoding="async">
             <img id="wz-4" src="assets/setup-4.png" width="880" height="580" alt="Setup step 5: installing" loading="lazy" decoding="async">
@@ -294,12 +294,12 @@
       </div>
       <div class="qa reveal" style="--d:60ms">
         <details><summary>Is WinIsland free?</summary><div class="qa-a"><p>Yes. There's no account, no subscription and nothing to unlock.</p></div></details>
-        <details><summary>Which music apps work?</summary><div class="qa-a"><p>Anything that shows up in the Windows media controls: Spotify, YouTube and other sites in your browser, the Media Player app, VLC, TIDAL and more. If several are open, pick one from the chips at the top of the dashboard.</p></div></details>
+        <details><summary>Which music apps work?</summary><div class="qa-a"><p>Anything that shows up in the Windows media controls: Spotify, YouTube and other sites in your browser, the Media Player app, VLC, TIDAL and more. If several are open, pick the one you want to control.</p></div></details>
         <details><summary>Where do the lyrics come from?</summary><div class="qa-a"><p>From LRCLIB, a free and open-source lyrics database. WinIsland sends only the song's title, artist, album and length, once per song, and keeps the answer on your PC. You can turn lyrics off in Settings → Music &amp; Lyrics.</p></div></details>
-        <details><summary>Will it slow down my PC?</summary><div class="qa-a"><p>No. It reacts to Windows events instead of polling, so it uses about 0% CPU when nothing is happening and around 210 MB of private memory across its processes (the host plus WebView2). It hides itself during fullscreen games and videos.</p></div></details>
+        <details><summary>Will it slow down my PC?</summary><div class="qa-a"><p>No. It reacts to Windows events instead of polling, so it uses about 0% CPU when nothing is happening and around 82 MB of memory. It's a single native process, with no browser engine inside. It hides itself during fullscreen games and videos.</p></div></details>
         <details><summary>Do I need administrator rights?</summary><div class="qa-a"><p>No. Setup installs WinIsland just for your user account, in your own AppData folder, and registers it in Windows Settings → Apps so you can uninstall it like any other app.</p></div></details>
-        <details><summary>What do I need to run it?</summary><div class="qa-a"><p>Windows 11, 64-bit, with the Microsoft Edge WebView2 Runtime, which is built into Windows 11. The download is 49 MB with everything included.</p></div></details>
-        <details><summary>Can I switch between the macOS and iOS look later?</summary><div class="qa-a"><p>Anytime. The switch sits at the top of the Settings window (Ctrl + Alt + F), and the island morphs in place.</p></div></details>
+        <details><summary>What do I need to run it?</summary><div class="qa-a"><p>Windows 11, 64-bit. That's it: the app is one native exe, with no .NET or browser runtime to install. The download is 6.2 MB.</p></div></details>
+        <details><summary>Can I switch between the Dynamic Notch and the Dynamic Island later?</summary><div class="qa-a"><p>Anytime. The switch sits at the top of the Settings window (Ctrl + Alt + F), and the change happens right away.</p></div></details>
         <details><summary>Does it work with multiple monitors?</summary><div class="qa-a"><p>The island lives at the top of your main display, and it steps aside while a fullscreen app is running there.</p></div></details>
         <details><summary>How do I uninstall it?</summary><div class="qa-a"><p>Open Windows Settings → Apps → Installed apps, find WinIsland and choose Uninstall. Everything it added (files, shortcuts and the autostart entry) is removed. You can choose to keep your settings.</p></div></details>
       </div>
@@ -315,7 +315,7 @@
       <p class="lede">Free for Windows 11. Installs in seconds, uninstalls cleanly.</p>
       <a class="btn btn-primary btn-lg" href="https://github.com/Aspectaquila/WinIsland/releases/latest/download/WinIslandSetup.exe">
         <svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5 10.5 4.4v7.1H3zM11.5 4.3 21 3v8.5h-9.5zM3 12.5h7.5v7.1L3 18.5zM11.5 12.5H21V21l-9.5-1.3z"/></svg>Download WinIsland</a>
-      <p class="meta">Free · 49 MB · Windows 11, 64-bit</p>
+      <p class="meta">Free · 6.2 MB · Windows 11, 64-bit</p>
     </div>
   </section>
 </main>
@@ -331,7 +331,7 @@
     </div>
     <div class="foot-notes">
       <p><b>Made with AI assistance:</b> large parts of WinIsland's code, design, installer, this website and the promo video were generated with Anthropic's Claude, directed and reviewed by the author.</p>
-      <p>WinIsland is an independent project and isn't affiliated with Apple Inc. macOS, iOS and Dynamic Island are trademarks of Apple Inc. Windows is a trademark of Microsoft Corporation. Lyrics by LRCLIB, weather by Open-Meteo.</p>
+      <p>WinIsland is an independent project and isn't affiliated with Apple Inc. Dynamic Island is a trademark of Apple Inc. Windows is a trademark of Microsoft Corporation. Lyrics by LRCLIB, weather by Open-Meteo.</p>
     </div>
   </div>
 </footer>

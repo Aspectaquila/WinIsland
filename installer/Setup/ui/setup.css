@@ -85,6 +85,11 @@ h2 { font: 700 26px var(--display); letter-spacing: -.025em; }
 .scene .capsule { position: absolute; left: 50%; top: 10px; width: 110px; height: 30px; transform: translateX(-50%); background: #000; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,.45); transition: width .6s var(--spring); }
 .scene .notch span, .scene .capsule span { position: absolute; right: 10px; top: 50%; width: 8px; height: 8px; margin-top: -4px; border-radius: 50%; background: #1c2342; }
 .look:hover .notch { width: 170px; } .look:hover .capsule { width: 160px; }
+/* the Dynamic Island splits a second activity into its own bubble (here: a timer ring) */
+.scene.ios .capsule { margin-left: -21px; }
+.scene .bubble { position: absolute; left: calc(50% + 40px); top: 10px; width: 30px; height: 30px; border-radius: 50%; background: #000; box-shadow: 0 8px 20px rgba(0,0,0,.45); transition: left .6s var(--spring); }
+.scene .bubble::after { content: ''; position: absolute; inset: 8px; border-radius: 50%; border: 2.5px solid #ff9f0a; border-right-color: rgba(255,159,10,.25); }
+.look:hover .bubble { left: calc(50% + 65px); }
 .scene .bar { position: absolute; left: 0; right: 0; top: 0; height: 0; }
 .lk { padding: 14px 6px 0; }
 .lk b { font: 650 16px var(--display); }

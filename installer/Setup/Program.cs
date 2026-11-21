@@ -1,6 +1,6 @@
 // WinIsland Setup / Uninstall.
 //   WinIslandSetup.exe                         interactive install wizard
-//   WinIslandSetup.exe /silent [/dir=PATH] [/style=macos|ios] [/noautostart] [/desktop] [/nostartmenu] [/nolaunch]
+//   WinIslandSetup.exe /silent [/dir=PATH] [/style=notch|island] [/noautostart] [/desktop] [/nostartmenu] [/nolaunch]
 //   Uninstall.exe (or /uninstall [/silent] [/keepsettings])
 using System;
 using System.Collections.Generic;
@@ -16,6 +16,10 @@ namespace FrostSetup
     {
         public static string TempDir;
         public static Dictionary<string, string> Opts = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+
+        /// <summary>"island" (or the old "ios") picks the Dynamic Island; anything else is the Dynamic Notch.</summary>
+        public static string NormStyle(string s) =>
+            s != null && (s.Equals("island", StringComparison.OrdinalIgnoreCase) || s.Equals("ios", StringComparison.OrdinalIgnoreCase)) ? "island" : "notch";
 
         [STAThread]
         private static int Main(string[] args)
@@ -101,13 +105,13 @@ namespace FrostSetup
     internal sealed class InstallOptions
     {
         public string Dir = Engine.DefaultDir;
-        public string Style = "macos";
+        public string Style = "notch";
         public bool Autostart = true, Desktop, StartMenu = true, Lyrics = true, Launch = true;
 
         public static InstallOptions FromArgs(Dictionary<string, string> o) => new InstallOptions
         {
             Dir = o.ContainsKey("dir") ? o["dir"] : Engine.DefaultDir,
-            Style = o.ContainsKey("style") && o["style"] == "ios" ? "ios" : "macos",
+            Style = Program.NormStyle(o.ContainsKey("style") ? o["style"] : null),
             Autostart = !o.ContainsKey("noautostart"),
             Desktop = o.ContainsKey("desktop"),
             StartMenu = !o.ContainsKey("nostartmenu"),

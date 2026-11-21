@@ -1,0 +1,53 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>WinIsland banner</title>
+<style>
+  /* YouTube channel banner: 2560x1440. Everything important sits in the 1546x423 area visible on every device. */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 2560px; height: 1440px; overflow: hidden; background: #0a0c20; font-family: 'Segoe UI Variable Display', 'Segoe UI', system-ui, sans-serif; color: #f5f5f7; -webkit-font-smoothing: antialiased; }
+  .bg { position: absolute; inset: 0;
+    background: radial-gradient(40% 55% at 50% 52%, rgba(143,211,255,.30), transparent 70%),
+                radial-gradient(60% 60% at 15% 95%, rgba(62,230,193,.35), transparent 65%),
+                radial-gradient(55% 60% at 88% 90%, rgba(192,139,255,.40), transparent 65%),
+                linear-gradient(160deg, #1f3378 0%, #2c1d66 48%, #0a0c20 100%); }
+  svg.aur { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .vig { position: absolute; inset: 0; background: radial-gradient(75% 75% at 50% 50%, transparent 60%, rgba(0,0,0,.45)); }
+  .safe { position: absolute; left: 507px; top: 508px; width: 1546px; height: 423px; display: flex; align-items: center; gap: 44px; }
+  .icon { width: 180px; height: 180px; flex: none; filter: drop-shadow(0 22px 40px rgba(0,0,0,.5)); }
+  .txt { flex: 1; min-width: 0; }
+  h1 { font-size: 136px; font-weight: 700; letter-spacing: -4px; line-height: 1; }
+  p { white-space: nowrap; font-size: 40px; font-weight: 500; color: rgba(255,255,255,.82); margin-top: 18px; letter-spacing: -.5px; }
+  .chips { display: flex; gap: 12px; margin-top: 30px; }
+  .chips span { white-space: nowrap; font-size: 24px; font-weight: 650; padding: 10px 20px; border-radius: 30px; background: rgba(255,255,255,.1); box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.14); }
+  .chips span.hl { background: linear-gradient(90deg, #3ee6c1, #8fd3ff 55%, #c08bff); color: #0a0c20; box-shadow: none; }
+  .isles { width: 580px; flex: none; display: flex; flex-direction: column; gap: 34px; align-items: center; }
+  .isles img { width: 100%; filter: drop-shadow(0 18px 30px rgba(0,0,0,.45)); }
+</style></head>
+<body>
+  <div class="bg"></div>
+  <svg class="aur" viewBox="0 0 2560 1440" preserveAspectRatio="none">
+    <defs>
+      <linearGradient id="a" x1="0" x2="1"><stop offset="0" stop-color="#3ee6c1"/><stop offset=".5" stop-color="#8fd3ff"/><stop offset="1" stop-color="#c08bff"/></linearGradient>
+      <filter id="b" filterUnits="userSpaceOnUse" x="-300" y="-300" width="3160" height="2040"><feGaussianBlur stdDeviation="40"/></filter>
+      <filter id="s" filterUnits="userSpaceOnUse" x="-300" y="-300" width="3160" height="2040"><feGaussianBlur stdDeviation="9"/></filter>
+    </defs>
+    <path d="M-100 1120 C 600 860, 1500 1300, 2660 900" stroke="url(#a)" stroke-width="150" fill="none" filter="url(#b)" opacity=".75"/>
+    <path d="M-100 1120 C 600 860, 1500 1300, 2660 900" stroke="url(#a)" stroke-width="18" fill="none" filter="url(#s)" opacity=".85"/>
+    <path d="M-100 1120 C 600 860, 1500 1300, 2660 900" stroke="#eafcff" stroke-width="3.5" fill="none" opacity=".7"/>
+    <path d="M-100 380 C 700 560, 1700 200, 2660 420" stroke="url(#a)" stroke-width="90" fill="none" filter="url(#b)" opacity=".28"/>
+    <g fill="#fff">
+      <circle cx="300" cy="420" r="4" opacity=".7"/><circle cx="2280" cy="360" r="4" opacity=".7"/><circle cx="720" cy="300" r="3" opacity=".5"/>
+      <circle cx="1880" cy="250" r="3" opacity=".5"/><circle cx="420" cy="980" r="3.5" opacity=".6"/><circle cx="2150" cy="1010" r="3.5" opacity=".6"/>
+      <circle cx="1280" cy="190" r="2.5" opacity=".45"/><circle cx="160" cy="700" r="2.5" opacity=".45"/><circle cx="2420" cy="680" r="2.5" opacity=".45"/>
+    </g>
+  </svg>
+  <div class="vig"></div>
+  <div class="safe">
+    <img class="icon" src="icon.svg" alt="">
+    <div class="txt">
+      <h1>WinIsland</h1>
+      <p>The Dynamic Island, made for Windows.</p>
+      <div class="chips"><span class="hl">Free download</span><span>Notch &amp; Island looks</span><span>Karaoke lyrics</span></div>
+    </div>
+    <div class="isles"><img src="island-exp.png" alt=""></div>
+  </div>
+</body></html>

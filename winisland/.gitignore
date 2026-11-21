@@ -1,0 +1,4 @@
+/target
+# test captures (may show the desktop behind the island) and the website capture output, which is copied to website/assets/shots
+/screenshots
+/shots-web

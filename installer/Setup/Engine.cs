@@ -15,7 +15,7 @@ namespace FrostSetup
     /// Per-user only (no admin): HKCU and the user's own folders.</summary>
     internal static class Engine
     {
-        public const string AppName = "WinIsland", Version = "2.0.0", Publisher = "WinIsland";
+        public const string AppName = "WinIsland", Version = "2.1.0", Publisher = "WinIsland";
         private const string UninstallKey = @"Software\Microsoft\Windows\CurrentVersion\Uninstall\WinIsland";
         private const string RunKey = @"Software\Microsoft\Windows\CurrentVersion\Run", RunName = "FrostDesktop";
 
@@ -89,6 +89,15 @@ namespace FrostSetup
             progress(0.01, "Closing WinIsland if it's running…");
             StopRunning();
             Directory.CreateDirectory(dir);
+
+            // 0) leftovers from the older WebView2 build (bin\ held the .NET runtime, web\ the UI);
+            //    only touched when it really is our install, recognised by its exe
+            if (File.Exists(Path.Combine(dir, "bin", "WinIsland.exe")) || File.Exists(Path.Combine(dir, "bin", "Frost.exe")))
+            {
+                try { if (Directory.Exists(Path.Combine(dir, "web"))) Directory.Delete(Path.Combine(dir, "web"), true); } catch { }
+                try { foreach (var f in Directory.GetFiles(Path.Combine(dir, "bin"))) TryDelete(f); } catch { }
+                try { var wv = Path.Combine(dir, "bin", "WinIsland.exe.WebView2"); if (Directory.Exists(wv)) Directory.Delete(wv, true); } catch { }
+            }
 
             // 1) files
             using (var s = Assembly.GetExecutingAssembly().GetManifestResourceStream("payload.zip"))
@@ -207,7 +216,7 @@ namespace FrostSetup
                     progress(0.2 + 0.6 * i / Math.Max(1, files.Length), files[i].Substring(dir.Length + 1));
                     try { File.Delete(files[i]); } catch { }
                 }
-                // WebView2 helpers can hold their cache for a moment after the island quits: retry a few times
+                // files can stay locked for a moment after the island quits: retry a few times
                 for (int pass = 0; pass < 8; pass++)
                 {
                     var left = Directory.GetFiles(dir, "*", SearchOption.AllDirectories).Where(f => !Keep(f)).ToArray();

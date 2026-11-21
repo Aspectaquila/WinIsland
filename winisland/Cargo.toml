@@ -1,0 +1,78 @@
+[package]
+name = "winisland"
+version = "2.1.0"
+edition = "2021"
+description = "WinIsland: a Dynamic Island for Windows"
+build = "build.rs"
+
+[[bin]]
+name = "winisland"
+path = "src/main.rs"
+
+[dependencies]
+gpui = "0.2.2"
+windows-core = "0.61"
+raw-window-handle = "0.6"
+serde_json = { version = "1", features = ["preserve_order"] }
+futures = "0.3"
+image = { version = "0.25.1", default-features = false, features = ["png", "jpeg", "bmp", "gif"] }
+smallvec = "1.6"
+ureq = { version = "2", default-features = false, features = ["native-tls", "json"] }
+native-tls = "0.2"
+regex = "1"
+sha1_smol = "1"
+
+[dependencies.windows]
+version = "0.61"
+features = [
+  "Foundation",
+  "Foundation_Collections",
+  "Media_Control",
+  "Storage_Streams",
+  "Devices_Geolocation",
+  "UI_Notifications",
+  "UI_Notifications_Management",
+  "ApplicationModel",
+  "Win32_Foundation",
+  "Win32_Graphics_Gdi",
+  "Win32_Graphics_Dwm",
+  "Win32_Media_Audio",
+  "Win32_Media_Audio_Endpoints",
+  "Win32_System_Com",
+  "Win32_System_Com_StructuredStorage",
+  "Win32_System_Variant",
+  "Win32_System_Registry",
+  "Win32_System_Threading",
+  "Win32_System_LibraryLoader",
+  "Win32_System_ProcessStatus",
+  "Win32_System_RemoteDesktop",
+  "Win32_System_Power",
+  "Win32_System_SystemInformation",
+  "Win32_System_Diagnostics_ToolHelp",
+  "Win32_System_WinRT",
+  "Win32_NetworkManagement_IpHelper",
+  "Win32_NetworkManagement_Ndis",
+  "Win32_Networking_WinSock",
+  "Win32_UI_WindowsAndMessaging",
+  "Win32_UI_Shell",
+  "Win32_UI_HiDpi",
+  "Win32_UI_Accessibility",
+  "Win32_UI_Input_KeyboardAndMouse",
+  "Win32_UI_Controls",
+  "Win32_Security",
+]
+
+[build-dependencies]
+winresource = "0.1"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 4
+strip = true
+panic = "abort"
+
+# gpui 0.2.2 with one small patch: the Windows vsync thread parks while no window needs a frame
+# (vendor/gpui/src/frame_wakeup.rs), so the idle island costs ~0% CPU.
+[patch.crates-io]
+gpui = { path = "vendor/gpui" }

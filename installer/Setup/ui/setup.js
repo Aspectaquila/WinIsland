@@ -10,7 +10,7 @@ const UNINSTALL = ['confirm', 'install', 'done'];
 const LABELS = { welcome: 'Welcome', look: 'Look', location: 'Location', options: 'Preferences', install: 'Install', done: 'Finish', confirm: 'Confirm' };
 let mode = qs.get('mode') === 'uninstall' ? 'uninstall' : 'install';
 let flow = mode === 'install' ? INSTALL : UNINSTALL;
-let idx = 0, state = { style: 'macos', dir: '', dirError: null, sizeMB: 0, freeMB: 0, busy: false, failed: false };
+let idx = 0, state = { style: 'notch', dir: '', dirError: null, sizeMB: 0, freeMB: 0, busy: false, failed: false };
 
 function renderSteps() {
   $('steps').innerHTML = flow.map((s, i) => `<li class="${i < idx ? 'done' : i === idx ? 'on' : ''}"><span class="n">${i + 1}</span>${LABELS[s]}</li>`).join('');
@@ -95,7 +95,7 @@ function onHost(m) {
         $('upgradeNote').textContent = `WinIsland ${m.existingVersion || ''} is already installed. Setup will update it in place and keep your settings.`;
       }
       renderSpace();
-      if (qs.get('style') === 'ios') document.querySelector('.look[data-style="ios"]').click();
+      if (['ios', 'island'].includes(qs.get('style'))) document.querySelector('.look[data-style="island"]').click();
       go(+qs.get('step') || 0);
       break;
     case 'dir':

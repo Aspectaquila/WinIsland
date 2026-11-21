@@ -1,5 +1,6 @@
-# Builds dist\WinIslandSetup.exe: publishes the app self-contained (no .NET install needed on the target PC),
-# packs it with the web UI into payload.zip, and embeds that in the .NET Framework 4.8 setup wizard.
+# Builds dist\WinIslandSetup.exe: compiles the Rust/GPUI app (winisland\), packs it into payload.zip,
+# and embeds that in the .NET Framework 4.8 setup wizard.
+# The app is one native exe: no .NET runtime and no WebView2 needed on the target PC.
 param([switch]$SkipApp)
 $ErrorActionPreference = 'Stop'
 $root  = Split-Path $PSScriptRoot -Parent
@@ -8,21 +9,21 @@ $setup = Join-Path $PSScriptRoot 'Setup'
 $dist  = Join-Path $root 'dist'
 
 if (-not $SkipApp) {
-  Write-Host '1/4 Publishing WinIsland (self-contained, single file)...'
+  Write-Host '1/3 Building WinIsland (Rust + GPUI, release)...'
   if (Test-Path $stage) { Remove-Item $stage -Recurse -Force }
   $pub = Join-Path $stage 'payload\bin'
-  # OutDir is redirected so the publish never touches the developer build in ..\bin
-  dotnet publish "$root\src\Frost.csproj" -c Release -r win-x64 --self-contained true -nologo -v q `
-    -p:PublishSingleFile=true -p:EnableCompressionInSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true `
-    -p:DebugType=none -p:OutDir="$stage\appbuild\\" -o $pub
-  if ($LASTEXITCODE) { throw 'dotnet publish failed' }
-  Get-ChildItem $pub -Include *.pdb, *.xml -Recurse | Remove-Item
-  if (-not (Test-Path "$pub\frost.ico")) { Copy-Item "$root\src\frost.ico" $pub }
+  New-Item -ItemType Directory -Force $pub | Out-Null
+  # rustc occasionally crashes on this machine (STATUS_ACCESS_VIOLATION); a retry always works
+  $ok = $false
+  for ($i = 0; $i -lt 3 -and -not $ok; $i++) {
+    # cargo reports progress on stderr, which Windows PowerShell would turn into a terminating error
+    cmd /c "cargo build --release --manifest-path `"$root\winisland\Cargo.toml`" 2>&1" | Out-Host
+    $ok = ($LASTEXITCODE -eq 0)
+  }
+  if (-not $ok) { throw 'cargo build failed' }
+  Copy-Item "$root\winisland\target\release\winisland.exe" "$pub\WinIsland.exe"
 
-  Write-Host '2/4 Adding the web UI...'
-  Copy-Item "$root\web" (Join-Path $stage 'payload\web') -Recurse
-
-  Write-Host '3/4 Packing payload.zip...'
+  Write-Host '2/3 Packing payload.zip...'
   Add-Type -AssemblyName System.IO.Compression, System.IO.Compression.FileSystem
   $zip = Join-Path $setup 'payload.zip'
   if (Test-Path $zip) { Remove-Item $zip }
@@ -39,7 +40,7 @@ if (-not $SkipApp) {
   $za.Dispose(); $fs.Dispose()
 }
 
-Write-Host '4/4 Building the setup wizard...'
+Write-Host '3/3 Building the setup wizard...'
 Copy-Item "$root\web\icon.svg" "$setup\ui\icon.svg" -Force
 dotnet build "$setup\Setup.csproj" -c Release -nologo -v q
 if ($LASTEXITCODE) { throw 'setup build failed' }

@@ -88,7 +88,6 @@ function onHost(m) {
     case 'init':
       mode = m.mode; flow = mode === 'install' ? INSTALL : UNINSTALL;
       Object.assign(state, { dir: m.dir, sizeMB: m.sizeMB, freeMB: m.freeMB, dirError: m.dirError });
-      $('ver').textContent = `Version ${m.version}`;
       $('dir').value = m.dir;
       if (mode === 'uninstall') $('fine').textContent = 'Your music apps and everything else stay exactly as they are.';
       if (m.existing && mode === 'install') {

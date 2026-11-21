@@ -1,4 +1,7 @@
-# WinIsland 2.0: a Dynamic Island for Windows
+# WinIsland: a Dynamic Island for Windows
+
+> **AI disclosure:** WinIsland was made with AI assistance. Large parts of the code, UI design, installer,
+> website and promotional video were generated with Anthropic's Claude, directed and reviewed by the author.
 
 A little black island at the top of your main display that unfolds into live activities. Two looks, switchable
 any time from the top of the Settings window:

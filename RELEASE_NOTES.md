@@ -1,4 +1,4 @@
-## WinIsland 2.0: a Dynamic Island for Windows
+## WinIsland: a Dynamic Island for Windows
 
 A little black island at the top of your screen that unfolds into live activities.
 
@@ -25,6 +25,8 @@ Uninstall from **Settings → Apps → Installed apps → WinIsland**.
 ### Privacy
 Lyrics come from LRCLIB (free, open source). Only the song's title, artist, album and length are sent, once per song. Weather comes from Open-Meteo, and only for the city you choose. No accounts and no tracking.
 
-SHA-256 of `WinIslandSetup.exe`: `7EAFF203677686A87F21CD1DAFC92D68AC57097426BA56BD6D2B4B98CAEF4BB3`
+SHA-256 of `WinIslandSetup.exe`: `8EABA3EAD7EB0075940797687203C23FF9AB34C64223B790F657EF7677FF0830`
 
+> **AI disclosure:** WinIsland was made with AI assistance. Large parts of the code, design, installer, website and promo video were generated with Anthropic's Claude, directed and reviewed by the author.
+>
 > WinIsland isn't affiliated with Apple. macOS, iOS and Dynamic Island are trademarks of Apple Inc.

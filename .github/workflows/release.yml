@@ -1,8 +1,12 @@
-# Pushing a tag like v2.0.0 creates the GitHub release with the installer attached.
+# Publishes the GitHub release with the installer attached.
+# - pushing a new tag (v*) creates a release for it
+# - pushing changes to the notes or the installer on main refreshes the latest release in place
 name: Release
 on:
   push:
     tags: ['v*']
+    branches: [main]
+    paths: ['RELEASE_NOTES.md', 'website/downloads/WinIslandSetup.exe', '.github/workflows/release.yml']
 
 permissions:
   contents: write
@@ -16,7 +20,10 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "$GITHUB_REF_NAME" website/downloads/WinIslandSetup.exe \
-            --title "WinIsland ${GITHUB_REF_NAME#v}" \
-            --notes-file RELEASE_NOTES.md \
-            --latest
+          if [ "$GITHUB_REF_TYPE" = "tag" ]; then TAG="$GITHUB_REF_NAME"; else TAG=$(gh release view --json tagName -q .tagName); fi
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release edit "$TAG" --title "WinIsland" --notes-file RELEASE_NOTES.md
+            gh release upload "$TAG" website/downloads/WinIslandSetup.exe --clobber
+          else
+            gh release create "$TAG" website/downloads/WinIslandSetup.exe --title "WinIsland" --notes-file RELEASE_NOTES.md --latest
+          fi

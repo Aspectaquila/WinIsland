@@ -26,8 +26,11 @@ jobs:
       - uses: actions/configure-pages@v5
         with:
           enablement: true
+      # the installer is served from GitHub Releases, so leave it out of the site (keeps the artifact small)
+      - name: Stage site
+        run: rsync -a --exclude downloads/ website/ _site/
       - uses: actions/upload-pages-artifact@v4
         with:
-          path: website
+          path: _site
       - id: deploy
         uses: actions/deploy-pages@v4
